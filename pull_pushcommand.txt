@@ -1,60 +1,40 @@
 🐳 Local Docker Commands
 🔧 Build Docker Image
-bash
-Copy
-Edit
+
 docker build -t rhulbhu64/python_django:latest .
 ▶️ Run Docker Container
-bash
-Copy
-Edit
+
 docker run -p 8000:8000 rhulbhu64/python_django:latest
 🔄 Stop and Remove Running Container
-bash
-Copy
-Edit
+
 docker ps                   # Get container ID or name
 docker stop <container_id>
 docker rm <container_id>
 ☁️ Docker Hub Commands
 🔐 Login to Docker Hub
-bash
-Copy
-Edit
+
 sudo docker login
 ⬆️ Push Docker Image to Docker Hub
-bash
-Copy
-Edit
+
 docker push rhulbhu64/python_django:latest
 ⬇️ Pull Image on Any Machine (e.g., AWS EC2)
-bash
-Copy
-Edit
+
 docker pull rhulbhu64/python_django:latest
 📡 AWS EC2 Commands (Once Logged In)
 🔍 See Running Containers
-bash
-Copy
-Edit
+
 docker ps
 ▶️ Run Docker Image on AWS
-bash
-Copy
-Edit
+
 docker run -d -p 8000:8000 rhulbhu64/python_django:latest
 📜 View Logs
-bash
-Copy
-Edit
+
 docker logs <container_id_or_name>            # Show all logs
 docker logs -f <container_id_or_name>         # Live logs
 docker logs --tail 100 <container_id_or_name> # Last 100 lines
 🧰 Bonus Commands
 📁 Create Dockerfile (if not already done)
-dockerfile
-Copy
-Edit
+
 FROM python:3.10-slim-buster
 
 WORKDIR /app
